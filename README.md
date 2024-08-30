@@ -25,7 +25,7 @@ O projeto segue uma arquitetura tradicional em camadas:
 
 ### Empresas
 
-- **GET /produtos**: Retorna todos os produtos.
+- **GET /produtos**: Retorna todos as empresas.
   - **Resposta**: `200 OK`
   ```json
   [
