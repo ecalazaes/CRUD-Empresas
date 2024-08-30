@@ -49,34 +49,43 @@ A API está documentada utilizando Swagger, permitindo que você explore os endp
 - URL de acesso: http://localhost:8080/api  
 <br>![Swagger](img/swagger.png)
 
-## Banco de Dados H2
-A aplicação utiliza o banco de dados em memória H2 para testes. Você pode acessar a interface web do H2 para inspecionar as tabelas e dados persistidos.
+## Banco de Dados MySQL
+A aplicação utiliza o banco de dados MySQL para persistência de dados. Certifique-se de que o MySQL está configurado e em execução. Abaixo estão as informações necessárias para configurar a aplicação:
 
-- URL de acesso: http://localhost:8080/h2-console
-- JDBC URL: jdbc:h2:mem:testdb
-- Username: sa
-- Password: (deixe em branco)
+## Configurações de Conexão
+- **URL de Conexão**: jdbc:mysql://${MYSQL_HOST:localhost}:3306/<nome_do_banco>
+- **Usuário do Banco de Dados**: root
+- **Senha do Banco de Dados**: (deixe em branco ou insira sua senha)
 
 ## Como Executar
-1. Clone o repositório
+1. Clone o repositório:  
    ```bash
-   https://github.com/ecalazaes/CRUD-Produtos.git
+   https://github.com/ecalazaes/CRUD-Empresas.git
    
-2. Navegue até o diretório do projeto:
+2. Navegue até o diretório do projeto:  
    ```bash
-   cd CRUD-Produtos
+   cd CRUD-Empresas
   
-3. Execute o projeto:
+3. Execute o projeto:  
    ```bash
    ./mvnw spring-boot:run
 
-4. Acesse a API no endereço:
+4. Configuração no application.properties  
+  - No arquivo src/main/resources/application.properties, insira ou atualize as seguintes propriedades:  
+    ```bash
+    # Acesso ao banco de dados
+    spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/<nome_do_banco>
+    
+    # Usuário do banco de dados
+    spring.datasource.username=root
+    
+    # Senha do banco de dados
+    spring.datasource.password=
+    ```
+
+5. Acesse a API no endereço:
    ```bash
-   http://localhost:8080/produtos
-   ```
-   
-   ```bash
-   http://localhost:8080/categorias
+   http://localhost:8080/Empresas 
 
 ## Licença
 
